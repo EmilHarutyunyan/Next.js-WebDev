@@ -1,0 +1,5 @@
+1. next/link
+2. next/router
+3. next/image
+4. nex/head
+5. Data Feching
