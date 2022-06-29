@@ -1,4 +1,4 @@
-import Heading from ".. /Heading";
+import Heading from "../Heading";
 
 const ContactInfo = ({ contact }) => {
   const { name, email, address } = contact || {};
