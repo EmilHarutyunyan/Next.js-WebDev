@@ -30,7 +30,7 @@ const Contacts = ({ contacts }) => {
       <ul>
         {contacts && contacts.map(({ id, name }) => (
           <li key={id}>
-            {/* <Link href={`/contacts/${id}`}>{name}</Link> */}
+            <Link href={`/contacts/${id}`}>{name}</Link>
           </li>
         ))}
       </ul>
