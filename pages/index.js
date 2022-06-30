@@ -1,24 +1,30 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
-import Image from 'next/image'
-import mountains from "../public/mountains.jpg"
+import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
-const Home = () => (
+export const getStaticProps = async () => {
+  const response = await fetch(`${process.env.API_HOST}/socials`);
+  const data = await response.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { socials: data },
+  }
+};
+
+const Home = ({ socials }) => (
   <div className={styles.wrapper}>
     <Head>
       <title>Home</title>
     </Head>
     <Heading text="Next.js Application" />
-   
-    <Image
-      alt="Mountains"
-      src={mountains}
-      placeholder="blur"
-      width={700}
-      height={475}
-    />
-    
+    <Socials socials={socials} />
   </div>
 );
 
