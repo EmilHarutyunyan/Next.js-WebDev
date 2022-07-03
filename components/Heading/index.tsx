@@ -1,11 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Heading = ({tag, text}) => {
+
+const Heading = ({ tag, text }: { tag?: keyof JSX.IntrinsicElements; text: string}) => {
   const Tag = tag || 'h1';
-
-  return (
-    <Tag>{text}</Tag>
-  )
+  return <Tag>{text}</Tag>
 }
 
-export default Heading
+export default Heading;
